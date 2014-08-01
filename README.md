@@ -1,4 +1,4 @@
-Hurdle  <div style"width:100px;height:100px;">![alt tag](https://raw.githubusercontent.com/ksparakis/Hurdle/master/default_app_logo.png)</div>
+#Hurdle  <div style"width:10px;height:10px;">![alt tag](https://raw.githubusercontent.com/ksparakis/Hurdle/master/default_app_logo.png)</div>
  
 ======
 
