@@ -1,6 +1,4 @@
 #Hurdle  <img src="https://raw.githubusercontent.com/ksparakis/Hurdle/master/default_app_logo.png" width="100px" height="100px"/>
-======
-
 Dynamic Form Submitter , for testing php server code without having to create the front end.
 
 #How To Use
