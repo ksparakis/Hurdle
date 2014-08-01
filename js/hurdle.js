@@ -1,10 +1,10 @@
 /*
 
-Div Slider Version: 0.1.0
+Hurdle Version: 0.1.0
 By Konstantino Sparakis
 Copyright (c) 2014
 
-Div Slider is 100% free and open-source.
+Hurdle is 100% free and open-source.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the 'Software'), to deal
