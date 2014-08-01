@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hurdle</title>
+</head>
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+     <link href="css/bootstrap.css" rel="stylesheet">
+     <link href="css/bootstrap-switch.css" rel="stylesheet">
+     <link href="css/div-slider.css" rel="stylesheet">
+     <script src="js/bootstrap-switch.js"></script>
+       <script src="js/jquery.form.min.js"></script>
+       <script src="js/hurdle.js"></script>
+     
+     <style>
+	 body{
+	 background-color:#656d78;
+	 }
+	 .headerHead{
+	  height: 140px; width: 100%;position:fixed;left:0;top:0;background-color:#4a89dc;z-index:2;
+	 }
+	 .jumbotron.fancypants{
+		 background-color:#ccd1d9;
+	 }
+	 .textArea{
+		 background-color:#fff;width:550px;height:300px;font-size:12px;overflow-y:scroll;
+	 }
+	 b{
+		 font-size:15px;
+	 }
+	 
+	 </style>    
+     
+     
+   <body>
+   <div class="headerHead" >
+   <h2 class="" style="color:#fff;padding-left:5px">Hurdle: Dynamic Form Submiter <img src="default_app_logo.png" width="50px" height="50px" style="background-color:#5d9cec;display:inline-block;float:right;margin-right:10px;margin-top:-15px"/></h2>
+   <div id="wraper" style="background-color:#5d9cec; width:100%;padding-left:20px">
+    
+    <div id="centerer" style="margin-left:auto;margin-right:auto; width:550px" >
+   <div id="interaction" style="margin-left:auto;margin-right:auto; width:500px;display:inline-block;">
+ 
+    <h4 style="display:inline-block;margin-right:290px"> File Location </h4> 
+    
+    <div style="display:inline-block" >
+       <!-- input-group -->
+                <div id="remote"class="input-group" style="">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                       <select id="remoteType"class="form-control" style="width:95px;height:20px;margin:-5,-5,-5,-5;background-color:transparent;color:#fff;border:none;">
+                            <option value="localhost" style="color:#fff">localhost/</option>
+    						<option value="http" style="color:#fff">http://</option>
+   							<option value="https" style="color:#fff">https://</option>
+						</select>
+                    </span>
+                </span>
+                <input id="remoteValue" type="text" class="form-control" >
+            </div> <!-- input-group -->
+            
+            
+    </div>
+   
+    
+   </div>  <!--interactions-->
+   
+     <div id="actions2" class="input-group" style="margin-top:25px;" >
+          
+             <button id="createNewForm" style="margin-left:1px;margin-bottom:10px;" class="btn btn-primary" onClick= "newForm();" type="button">New Form</button> 
+
+        <button id="EditOldForm" style="margin-left:5px;margin-bottom:10px;" class="btn btn-primary" onClick= "editForm(); " type="button">Edit Form</button> 
+         <button id="resubmitForm" style="margin-left:5px;margin-bottom:10px;"class="btn btn-primary"  onClick= "reSubmit();" >Resubmit Form</button>
+      </div> <!--Actions-->
+      
+      
+        <div id="actions" class="input-group" style="margin-top:25px;" >
+           <span class="btn btn-primary btn-file" style="display:inline-block;margin-bottom:10px;margin-right:4px;">
+                        Quick Scan File <input id="fileGetter" type="file" onClick="">
+                    </span>
+             <button id="addNewInput" style="margin-left:1px;margin-bottom:10px;" class="btn btn-primary" onClick= "clearForm(); " type="button">Clear Form</button> 
+
+        <button id="addNewInput" style="margin-left:5px;margin-bottom:10px;" class="btn btn-primary" onClick= "createNewItem(); " type="button">Add Input +</button> 
+         <button id="submitForm" style="margin-left:5px;margin-bottom:10px;"class="btn btn-primary"  onClick= "TestSubmit();" >Submit Form</button>
+      </div> <!--Actions-->
+      </div> <!-- centerer -->
+      </div> <!-- #wrapper -->
+   </div> <!-- headerhead-->
+
+   
+   
+      <div class="container">
+      
+      <div id='page0' class="jumbotron pages fancypants" style="width:650px;margin-top:150px" >
+      <h2 id="titleForm" style="color:#fff;margin-left:50px">Form</h2>
+      
+      <!-- add bootstrap error code thingy here -->
+      
+      <div id="tabler">
+      </div> <!--tabler-->
+      <h3 id="welcome">   
+       <div id="local" class="input-group" style="">
+      <h3>Instructions:</h3>
+      <div style="margin-left:55px">
+      <h4>
+      <p> 1.) Quick Scan File </p>
+      <p style="text-align:center" > OR </p>
+      <p> 1.) Type in file url in above</p>
+      <p> 2.) Add Input to form</p>
+      <p>3.) Give Input a name and value</p>
+      <p>4.) Submit form and see results</p>
+     </h4>
+     </div><!--local--></h3>
+     </div> <!-- page0 -->
+     
+       
+       
+         <div id='page1' class="jumbotron pages fancypants" style="width:650px">
+          
+		 <h2 style="color:#fff;margin-left:0px">Results</h2>
+         
+         <div id='textArea' class='textArea'>
+			
+		</div><!--Textarea-->
+         </div> <!--Page1-->
+        </div><!--Container-->
+     
+      
+
+  <form id="submit-Form" action="" method="post" > 
+       
+       </form>
+</body>
+</html>
+
+
+
