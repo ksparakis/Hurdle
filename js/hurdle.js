@@ -292,25 +292,45 @@ function reSubmit()
 }
 
 var posts=[];
+var enumChecked = true;
 function scanFileContent(data)
 {
-	
-	var n = data.search(/\$_POST\['/);
-	if(n > -1)
+	if(enumChecked == false)
 	{
-		var k = data.length;
-		var res = data.substring(n+8, k);
-		n = res.search(/'\];/);
-		posts.push(res.substring(0,n));
-		var newData = res.substring(n+2,k);
-		scanFileContent(newData);
+		var n = data.search(/\$_POST\[/);
+		if(n > -1)
+		{
+			var k = data.length;
+			var res = data.substring(n+8, k);
+			n = res.search(/\];/);
+			posts.push(res.substring(0,n));
+			var newData = res.substring(n+2,k);
+			scanFileContent(newData);
+		}
+		else
+		{
+			addInputsFromArray(posts);
+
+		}
 	}
 	else
 	{
-		addInputsFromArray(posts);
+		var n = data.search(/\$_POST\[/);
+		if(n > -1)
+		{
+			var k = data.length;
+			var res = data.substring(n+7, k);
+			n = res.search(/\];/);
+			posts.push(res.substring(0,n));
+			var newData = res.substring(n+2,k);
+			scanFileContent(newData);
+		}
+		else
+		{
+			addInputsFromArray(posts);
 
+		}
 	}
-	
 	
 }
 
