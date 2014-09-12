@@ -207,13 +207,7 @@ function createForm()
 {
 	//get location to submit
 	var action;
-	if(isChecked == true) // local
-	{
-       
-  		action = tmppath;
-		//console.log(tmppath);
-	}
-	else{ //remote
+	
 	    
 	    var header =$( "#remoteType option:selected" ).text();
 		if(header=="localhost/")
@@ -224,14 +218,14 @@ function createForm()
 		
 		action = header + $('#remoteValue').val();
 			//console.log(action);
-	}
+	
   		$("#submit-Form").replaceWith(" <form id='submit-Form' action='"+action+"' method='post' ></form>");
 		
 	//loop through all divs to get value and add them to form as hidden
 	
 	for(i=0;i<inputCount;i++)
 	{
-		var create = " <input type='hidden' name='"+$('#in'+i).val+"' value='"+$('#iv'+i).val+"'>";
+		var create = " <input type='hidden' name='"+$('#in'+i).val()+"' value='"+$('#iv'+i).val()+"'>";
 		$( "#submit-Form" ).append( create );
 	}
 	
@@ -249,9 +243,28 @@ function showResults(data)
 		 {
 			data = data.replace(/<br>/, "<p>");
 		 }
-	$("#textArea").replaceWith( "<div id='#textArea' class='textArea'>	"+data+" </div>");
+	$("#textArea").replaceWith( "<div id='textArea' class='textArea'>	"+data+" </div>");
 }
 
+function showResults2(data1)
+{
+	
+		$('#actions').hide();
+		$('#actions2').show();
+		var k = data1.match(/<br>/g);  
+
+         
+		 for(var i=0;i<k;i++)
+		 {
+			data1 = data1.replace(/<br>/, "<p>");
+		 }
+		 alert("yolo");
+
+		 
+
+	$('#textArea').replaceWith( "<div id='textArea' class='textArea'>	"+data1+" </div>");
+
+}
 
 function showFail(data)
 {
@@ -287,7 +300,7 @@ function editForm()
 
 function reSubmit()
 {
-		$("#submit-Form").ajaxSubmit({success:showResults, fail:showFail});
+		$("#submit-Form").ajaxSubmit({success:showResults2, fail:showFail});
 	return false;
 }
 
