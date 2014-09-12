@@ -258,7 +258,7 @@ function showResults2(data1)
 		 {
 			data1 = data1.replace(/<br>/, "<p>");
 		 }
-		 alert("yolo");
+		 //alert("yolo");
 
 		 
 
